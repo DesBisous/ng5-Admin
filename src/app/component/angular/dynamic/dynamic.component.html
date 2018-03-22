@@ -1,0 +1,21 @@
+<div class="antComponent">
+  <div class="antBlock" [@zoom]>
+    <div nz-row>
+      <div nz-col [nzSpan]="24">
+        <nz-card [nzBordered]="false">
+          <ng-template #title>
+            动态组件
+          </ng-template>
+          <ng-template #body>
+            <div class="body-view">
+                <ng-template appAd></ng-template>
+            </div>
+            <div class="body-desc">
+              <p>angular中的的内容映射使用的是ng-content指令，内容映射指的是在组件中嵌入模板代码，方便定制可复用的组件。</p>
+            </div>
+          </ng-template>
+        </nz-card>
+      </div>
+    </div>
+  </div>
+</div>

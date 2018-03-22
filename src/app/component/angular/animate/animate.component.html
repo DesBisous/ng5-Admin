@@ -1,0 +1,36 @@
+<div class="antComponent">
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          动画基本使用案例
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <textarea>
+              import {trigger, state, style, animate, transition, keyframes} from '@angular/animations';
+              export const searchAnimate = trigger('searchAnimate', [
+                  state('in', style({transform: 'translateX(0)'})),
+                    transition('void => *', [
+                        animate(200, keyframes([
+                            style({opacity: 0, width: '0', transform: 'translateX(20px)', offset: 0}),
+                            style({opacity: 1, width: '*', transform: 'translateX(0)',     offset: 1.0})
+                        ]))
+                    ]),
+                    transition('* => void', [
+                        animate(200, keyframes([
+                            style({opacity: 1, width: '*', transform: 'translateX(0)',     offset: 0}),
+                            style({opacity: 0, width: '0', transform: 'translateX(20px)',  offset: 1.0})
+                        ]))
+                    ])
+              ]);
+            </textarea>
+          </div>
+          <div class="body-desc">
+            <p></p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,318 @@
+<div class="antComponent">
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="12">
+      <div nz-row>
+        <div nz-col [nzSpan]="24" [@zoom] *ngIf="!isLoadingOne">
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              按钮类型
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <button nz-button [nzType]="'primary'">
+                  <span>Primary</span>
+                </button>
+                <button nz-button [nzType]="'default'">
+                  <span>Default</span>
+                </button>
+                <button nz-button [nzType]="'dashed'">
+                  <span>Dashed</span>
+                </button>
+                <button nz-button [nzType]="'danger'">
+                  <span>Danger</span>
+                </button>
+              </div>
+              <div class="btn-body-desc">
+                <p>按钮有四种类型：主按钮、次按钮、虚线按钮、危险按钮。主按钮在同一个操作区域最多出现一次。</p>
+                <p>其中 <code>[nzType]="'default'"</code>可以简化为 <code>nzType="default"</code>，之后不再赘述。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              按钮类型
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <nz-radio-group [(ngModel)]="size">
+                  <label nz-radio-button [nzValue]="'large'"><span>Large</span></label>
+                  <label nz-radio-button [nzValue]="'default'"><span>Default</span></label>
+                  <label nz-radio-button [nzValue]="'small'"><span>Small</span></label>
+                </nz-radio-group>
+                <br><br>
+                <button nz-button [nzType]="'primary'" [nzSize]="size" [nzShape]="'circle'">
+                  <i class="anticon anticon-download"></i>
+                </button>
+                <button nz-button [nzType]="'primary'" [nzSize]="size">
+                  <i class="anticon anticon-download"></i><span>Download</span>
+                </button>
+                <button nz-button [nzType]="'primary'" [nzSize]="size">
+                  <span>Normal</span>
+                </button>
+                <br><br>
+                <nz-button-group [nzSize]="size">
+                  <button nz-button [nzType]="'primary'">
+                    <i class="anticon anticon-left"></i><span>Backward</span>
+                  </button>
+                  <button nz-button [nzType]="'primary'">
+                    <span>Forward</span><i class="anticon anticon-right"></i>
+                  </button>
+                </nz-button-group>
+              </div>
+              <div class="btn-body-desc">
+                <p>按钮有大、中、小三种尺寸。</p>
+                <p>通过设置 <code>nzSize</code> 为 <code>large small</code> 分别把按钮设为大、小尺寸。若不设置 <code>nzSize</code>，则尺寸为中。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              按钮类型
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <button nz-button [nzType]="'primary'" nzLoading>
+                  <span><i class="anticon anticon-poweroff"></i>Loading</span>
+                </button>
+                <button nz-button [nzType]="'primary'" [nzSize]="'small'" nzLoading>
+                  <span>Loading</span>
+                </button>
+                <br><br>
+                <button nz-button [nzType]="'primary'" (click)="loadOne($event)" [nzLoading]="isLoadingOne">
+                  <span>Click me!</span>
+                </button>
+                <button nz-button [nzType]="'primary'" (click)="loadTwo($event)" [nzLoading]="isLoadingTwo">
+                  <i class="anticon anticon-poweroff"></i>
+                  <span>Click me!</span>
+                </button>
+                <br><br>
+                <button nz-button nzLoading [nzShape]="'circle'"></button>
+                <button nz-button nzLoading [nzType]="'primary'" [nzShape]="'circle'"></button>
+              </div>
+              <div class="btn-body-desc">
+                <p>添加 <code>loading</code> 属性即可让按钮处于加载状态，最后两个按钮演示点击后进入加载状态。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              按钮类型
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <h4>Basic</h4>
+                <nz-button-group>
+                  <button nz-button>Cancel</button>
+                  <button nz-button [nzType]="'primary'">OK</button>
+                </nz-button-group>
+                <nz-button-group>
+                  <button nz-button [nzType]="'default'" disabled>
+                    <span>L</span>
+                  </button>
+                  <button nz-button [nzType]="'default'" disabled>
+                    <span>M</span>
+                  </button>
+                  <button nz-button [nzType]="'default'" disabled>
+                    <span>R</span>
+                  </button>
+                </nz-button-group>
+                <nz-button-group>
+                  <button nz-button [nzType]="'primary'" disabled>
+                    <span>L</span>
+                  </button>
+                  <button nz-button [nzType]="'default'" disabled>
+                    <span>M</span>
+                  </button>
+                  <button nz-button [nzType]="'default'">
+                    <span>M</span>
+                  </button>
+                  <button nz-button [nzType]="'dashed'" disabled>
+                    <span>R</span>
+                  </button>
+                </nz-button-group>
+                <br><br>
+                <h4>With Icon</h4>
+                <nz-button-group>
+                  <button nz-button [nzType]="'primary'">
+                    <i class=" anticon anticon-left"></i>
+                    <span>Go back</span>
+                  </button>
+                  <button nz-button [nzType]="'primary'">
+                    <span>Go forward</span>
+                    <i class=" anticon anticon-right"></i>
+                  </button>
+                </nz-button-group>
+                <nz-button-group>
+                  <button nz-button [nzType]="'primary'">
+                    <i class=" anticon anticon-cloud"></i>
+                  </button>
+                  <button nz-button [nzType]="'primary'">
+                    <i class=" anticon anticon-cloud-download"></i>
+                  </button>
+                </nz-button-group>
+                <br><br>
+                <h4>Size</h4>
+                <nz-button-group [nzSize]="'large'">
+                  <button nz-button>Large</button>
+                  <button nz-button>Large</button>
+                </nz-button-group>
+                <nz-button-group>
+                  <button nz-button>Default</button>
+                  <button nz-button>Default</button>
+                </nz-button-group>
+                <nz-button-group [nzSize]="'small'">
+                  <button nz-button>Small</button>
+                  <button nz-button>Small</button>
+                </nz-button-group>
+              </div>
+              <div class="btn-body-desc">
+                <p>可以将多个 <code>nz-button</code> 放入 <code>nz-button-group</code> 的容器中。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <div nz-row>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              图标按钮
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <button nz-button [nzType]="'primary'" [nzShape]="'circle'">
+                  <i class="anticon anticon-search"></i>
+                </button>&nbsp;&nbsp;
+                <button nz-button [nzType]="'primary'">
+                  <i class="anticon anticon-search"></i><span>Search</span>
+                </button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button nz-button [nzType]="'dashed'" [nzShape]="'circle'">
+                  <i class="anticon anticon-search"></i>
+                </button>&nbsp;&nbsp;
+                <button nz-button [nzType]="'default'">
+                  <i class="anticon anticon-search"></i><span>Search</span>
+                </button>
+              </div>
+              <div class="btn-body-desc">
+                <p>当需要在 <code>button</code> 内嵌入 <code>icon</code> 时，请直接在 <code>button</code> 内使用<code>icon</code></p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              不可用状态
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <button nz-button [nzType]="'primary'">
+                  <span>Primary</span>
+                </button>&nbsp;&nbsp;
+                <button nz-button [nzType]="'primary'" disabled>
+                  <span>Primary(disabled)</span>
+                </button>
+                <br><br>
+                <button nz-button [nzType]="'default'">
+                  <span>Default</span>
+                </button>&nbsp;&nbsp;
+                <button nz-button [nzType]="'default'" disabled>
+                  <span>Default(disabled)</span>
+                </button>
+                <br><br>
+                <button nz-button nzGhost>
+                  <span>Ghost</span>
+                </button>&nbsp;&nbsp;
+                <button nz-button nzGhost disabled>
+                  <span>Ghost(disabled)</span>
+                </button>
+                <br><br>
+                <button nz-button [nzType]="'dashed'">
+                  <span>Dashed</span>
+                </button>&nbsp;&nbsp;
+                <button nz-button [nzType]="'dashed'" disabled>
+                  <span>Dashed(disabled)</span>
+                </button>
+              </div>
+              <div class="btn-body-desc">
+                <p>添加 <code>isabled</code> 属性即可让按钮处于不可用状态，同时按钮样式也会改变。</p>
+                <p>添加 <code>nzGhost</code> 属性即可设置幽灵按钮。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              图标按钮
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <button nz-button [nzType]="'primary'">
+                  <span>primary</span>
+                </button>
+                <button nz-button [nzType]="'default'">
+                  <span>secondary</span>
+                </button>
+                <nz-dropdown>
+                  <button nz-button nz-dropdown><span>more</span> <i class="anticon anticon-down"></i></button>
+                  <ul nz-menu>
+                    <li nz-menu-item>
+                      <a>1st item</a>
+                    </li>
+                    <li nz-menu-item>
+                      <a>2nd item</a>
+                    </li>
+                    <li nz-menu-item>
+                      <a>3rd item</a>
+                    </li>
+                  </ul>
+                </nz-dropdown>
+              </div>
+              <div class="btn-body-desc">
+                <p>按钮组合使用时，推荐使用1个主操作 + n 个次操作，3个以上操作时把更多操作放到 <code>nz-dropdown</code>下拉按钮中组合使用。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              图标按钮
+            </ng-template>
+            <ng-template #body>
+              <div class="btn-body-view">
+                <div style="background: rgb(190, 200, 200);padding: 26px 16px 16px;">
+                  <button nz-button [nzType]="'primary'" nzGhost>
+                    <span>Primary</span>
+                  </button>
+                  <button nz-button [nzType]="'default'" nzGhost>
+                    <span>Default</span>
+                  </button>
+                  <button nz-button [nzType]="'dashed'" nzGhost>
+                    <span>Dashed</span>
+                  </button>
+                  <button nz-button [nzType]="'danger'" nzGhost>
+                    <span>Danger</span>
+                  </button>
+                </div>
+              </div>
+              <div class="btn-body-desc">
+                <p>幽灵按钮将其他按钮的内容反色，背景变为透明，常用在有色背景上。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

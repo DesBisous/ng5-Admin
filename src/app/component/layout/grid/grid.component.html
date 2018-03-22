@@ -1,0 +1,391 @@
+<div class="antComponent">
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          基础布局
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <div nz-row>
+              <div nz-col [nzSpan]="12">
+                <div class="col-box">col-12</div>
+              </div>
+              <div nz-col [nzSpan]="12">
+                <div class="col-box">col-12</div>
+              </div>
+            </div>
+            <div nz-row>
+              <div nz-col [nzSpan]="8">
+                <div class="col-box">col-8</div>
+              </div>
+              <div nz-col [nzSpan]="8">
+                <div class="col-box">col-8</div>
+              </div>
+              <div nz-col [nzSpan]="8">
+                <div class="col-box">col-8</div>
+              </div>
+            </div>
+            <div nz-row>
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-8</div>
+              </div>
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-6</div>
+              </div>
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-6</div>
+              </div>
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-6</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>从堆叠到水平排列。</p>
+            <p>使用单一的一组 <code>nz-row</code> 和 <code>nz-col</code> 栅格组件，就可以创建一个基本的栅格系统，所有列（nz-col）必须放在 <code>nz-row</code> 内。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          区块间隔
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <div nz-row [nzGutter]="8">
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-6</div>
+              </div>
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-6</div>
+              </div>
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-6</div>
+              </div>
+              <div nz-col [nzSpan]="6">
+                <div class="col-box">col-6</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>栅格常常需要和间隔进行配合，你可以使用 <code>nz-row</code> 的 <code>nzGutter</code> 属性，我们推荐使用 <code>(16+8n)px</code> 作为栅格间隔。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          左右偏移
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <div nz-row>
+              <div nz-col [nzSpan]="8">
+                <div class="col-box">col-8</div>
+              </div>
+              <div nz-col [nzSpan]="8" [nzOffset]="8">
+                <div class="col-box">col-8 col-offset-8</div>
+              </div>
+            </div>
+            <div nz-row>
+              <div nz-col [nzSpan]="6" [nzOffset]="6">
+                <div class="col-box">col-6 col-offset-6</div>
+              </div>
+              <div nz-col [nzSpan]="6" [nzOffset]="6">
+                <div class="col-box">col-6 col-offset-6</div>
+              </div>
+            </div>
+            <div nz-row>
+              <div nz-col [nzSpan]="12" [nzOffset]="6">
+                <div class="col-box">col-12 col-offset-6</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>列偏移</p>
+            <p>使用 <code>nzOffset</code> 可以将列向右侧偏。例如，<code>[nzOffset]="'4'"</code> 将元素向右侧偏移了 4 个列（column）的宽度。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          列排序
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <div nz-row>
+              <div nz-col [nzSpan]="18" [nzPush]="6">
+                <div class="col-box">col-18 col-push-6</div>
+              </div>
+              <div nz-col [nzSpan]="6" [nzPull]="18">
+                <div class="col-box">col-6 col-pull-18</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>使用 <code>nzPull</code> 和 <code>nzPush</code> 类就可以很容易的改变列（column）的顺序。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          Flex布局
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <p>sub-element align left</p>
+            <div nz-row [nzType]="'flex'" [nzJustify]="'start'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+            </div>
+            <p>sub-element align center</p>
+            <div nz-row [nzType]="'flex'" [nzJustify]="'center'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+            </div>
+            <p>sub-element align right</p>
+            <div nz-row [nzType]="'flex'" [nzJustify]="'end'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+            </div>
+            <p>sub-element monospaced arrangement</p>
+            <div nz-row [nzType]="'flex'" [nzJustify]="'space-between'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+            </div>
+            <p>sub-element align full</p>
+            <div nz-row [nzType]="'flex'" [nzJustify]="'space-around'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box">colo-4</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>Flex布局基础</p>
+            <p>使用 <code>[nzType]="'flex'"</code> 定义 <code>flex</code> 布局，其子元素根据 <code>[nzJustify]</code> 不同的值 <code>start</code>,<code>center</code>,<code>end</code>,<code>space-between</code>,<code>space-around</code>，分别定义其在父节点里面的排版方式。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          Flex对齐
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <p>Align Top</p>
+            <div class="nzAlign" nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'top'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-100">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-50">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-120">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-80">col-4</div>
+              </div>
+            </div>
+            <p>Align Center</p>
+            <div class="nzAlign" nz-row [nzType]="'flex'" [nzJustify]="'space-around'" [nzAlign]="'middle'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-100">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-50">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-120">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-80">col-4</div>
+              </div>
+            </div>
+            <p>Align Bottom</p>
+            <div class="nzAlign" nz-row [nzType]="'flex'" [nzJustify]="'space-between'" [nzAlign]="'bottom'">
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-100">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-50">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-120">col-4</div>
+              </div>
+              <div nz-col [nzSpan]="4">
+                <div class="col-box height-80">col-4</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>Flex 子元素垂直对齐。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          Flex排序
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <button nz-button [nzType]="'primary'" (click)="reverse()">
+              <span>颠倒顺序</span>
+            </button>
+            <div nz-row [nzType]="'flex'">
+              <div nz-col [nzSpan]="6" [nzOrder]="order" *ngFor="let order of orderList;index as i">
+                <div class="col-box" >{{i + 1}} col-order-{{order}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>通过 Flex 布局的 Order 来改变元素的排序。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          响应式布局
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <div nz-row>
+              <div nz-col [nzXs]="2" [nzSm]="4" [nzMd]="6" [nzLg]="8" [nzXl]="10">
+                <div class="col-box">Col</div>
+              </div>
+              <div nz-col [nzXs]="20" [nzSm]="16" [nzMd]="12" [nzLg]="8" [nzXl]="4">
+                <div class="col-box">Col</div>
+              </div>
+              <div nz-col [nzXs]="2" [nzSm]="4" [nzMd]="6" [nzLg]="8" [nzXl]="10">
+                <div class="col-box">Col</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>参照 Bootstrap 的 响应式设计 ，预设四个响应尺寸：<code>xs</code> <code>sm</code> <code>md</code> <code>lg</code> <code>xl</code>。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          其他属性的响应式
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <div nz-row>
+              <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                <div class="col-box">Col</div>
+              </div>
+              <div nz-col [nzXs]="{ span: 11, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                <div class="col-box">Col</div>
+              </div>
+              <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                <div class="col-box">Col</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p><code>span</code> <code>pull</code> <code>push</code> <code>offset</code> <code>order</code> 属性可以通过内嵌到 nzXs nzSm nzMd nzLg nzXl 属性中来使用。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@zoom]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          栅格配置器
+        </ng-template>
+        <ng-template #body>
+          <div class="grid-body-view">
+            <div style="margin-bottom:16px;">
+              <span style="margin-right: 6px;">Gutter (px): </span>
+              <div style="width: 50%">
+                <nz-slider [nzMarks]="marksGutter" [nzStep]="null" [nzDefaultValue]="16" [nzMax]="48" [(ngModel)]="gutter"></nz-slider>
+              </div>
+              <span style="margin-right: 6px;">Column Count:</span>
+              <div style="width: 50%">
+                <nz-slider [nzMarks]="marksCount" [nzStep]="null" [nzDefaultValue]="4" [nzMax]="12" [(ngModel)]="count"></nz-slider>
+              </div>
+            </div>
+
+            <div class="gutter-example">
+              <div nz-row [nzGutter]="gutter">
+                <div nz-col class="gutter-row" [nzSpan]="24/count" *ngFor="let i of generateArray(count)">
+                  <div class="grid-config col-box">Column</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-body-desc">
+            <p>可以简单配置几种等分栅格和间距。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+</div>

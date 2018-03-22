@@ -1,0 +1,437 @@
+<div class="antComponent">
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          基本结构
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-1">
+              <nz-layout>
+                <nz-header>Header</nz-header>
+                <nz-content>Content</nz-content>
+                <nz-footer>Footer</nz-footer>
+              </nz-layout>
+              <nz-layout>
+                <nz-header>Header</nz-header>
+                <nz-layout>
+                  <nz-sider>Sider</nz-sider>
+                  <nz-content>Content</nz-content>
+                </nz-layout>
+                <nz-footer>Footer</nz-footer>
+              </nz-layout>
+              <nz-layout>
+                <nz-header>Header</nz-header>
+                <nz-layout>
+                  <nz-content>Content</nz-content>
+                  <nz-sider>Sider</nz-sider>
+                </nz-layout>
+                <nz-footer>Footer</nz-footer>
+              </nz-layout>
+              <nz-layout>
+                <nz-sider>Sider</nz-sider>
+                <nz-layout>
+                  <nz-header>Header</nz-header>
+                  <nz-content>Content</nz-content>
+                  <nz-footer>Footer</nz-footer>
+                </nz-layout>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>典型的页面布局。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          上中下布局
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-4">
+              <nz-layout class="layout">
+                <nz-header>
+                  <div class="logo"></div>
+                  <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+                    <li nz-menu-item>nav 1</li>
+                    <li nz-menu-item>nav 2</li>
+                    <li nz-menu-item>nav 3</li>
+                  </ul>
+                </nz-header>
+                <nz-content style="padding:0 50px;">
+                  <nz-breadcrumb style="margin:12px 0;">
+                    <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+                    <nz-breadcrumb-item>List</nz-breadcrumb-item>
+                    <nz-breadcrumb-item>App</nz-breadcrumb-item>
+                  </nz-breadcrumb>
+                  <div style="background:#fff; padding: 24px; min-height: 280px;">Content</div>
+                </nz-content>
+                <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>最基本的『上-中-下』布局。</p>
+            <p>一般主导航放置于页面的顶端，从左自右依次为：logo、一级导航项、辅助菜单（用户、设置、通知等）。通常将内容放在固定尺寸（例如：1200px）内，整个页面排版稳定，不受用户终端显示器影响；上下级的结构符合用户上下浏览的习惯，也是较为经典的网站导航模式。页面上下切分的方式提高了主工作区域的信息展示效率，但在纵向空间上会有一些牺牲。此外，由于导航栏水平空间的限制，不适合那些一级导航项很多的信息结构。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          顶部-侧边布局-通栏
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-4">
+              <nz-layout class="layout">
+                <nz-header>
+                  <div class="logo"></div>
+                  <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+                    <li nz-menu-item>nav 1</li>
+                    <li nz-menu-item>nav 2</li>
+                    <li nz-menu-item>nav 3</li>
+                  </ul>
+                </nz-header>
+                <nz-layout>
+                  <nz-sider [nzWidth]="200" style="background:#fff">
+                    <ul nz-menu [nzMode]="'inline'" style="height:100%">
+                      <li nz-submenu>
+                        <span title><i class="anticon anticon-user"></i>subnav 1</span>
+                        <ul>
+                          <li nz-menu-item>option1</li>
+                          <li nz-menu-item>option2</li>
+                          <li nz-menu-item>option3</li>
+                          <li nz-menu-item>option4</li>
+                        </ul>
+                      </li>
+                      <li nz-submenu>
+                        <span title><i class="anticon anticon-laptop"></i>subnav 2</span>
+                        <ul>
+                          <li nz-menu-item>option5</li>
+                          <li nz-menu-item>option6</li>
+                          <li nz-menu-item>option7</li>
+                          <li nz-menu-item>option8</li>
+                        </ul>
+                      </li>
+                      <li nz-submenu>
+                        <span title><i class="anticon anticon-notification"></i>subnav 3</span>
+                        <ul>
+                          <li nz-menu-item>option9</li>
+                          <li nz-menu-item>option10</li>
+                          <li nz-menu-item>option11</li>
+                          <li nz-menu-item>option12</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nz-sider>
+                  <nz-layout style="padding:0 24px 24px">
+                    <nz-breadcrumb style="margin:12px 0;">
+                      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+                      <nz-breadcrumb-item>List</nz-breadcrumb-item>
+                      <nz-breadcrumb-item>App</nz-breadcrumb-item>
+                    </nz-breadcrumb>
+                    <nz-content style="background:#fff; padding: 24px; min-height: 280px;">Content</nz-content>
+                  </nz-layout>
+                </nz-layout>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>同样拥有顶部导航及侧边栏，区别是两边未留边距，多用于应用型的网站。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          顶部-侧边布局-通栏
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-4">
+              <nz-layout class="layout">
+
+                <nz-header>
+                  <div class="logo"></div>
+                  <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+                    <li nz-menu-item>nav 1</li>
+                    <li nz-menu-item>nav 2</li>
+                    <li nz-menu-item>nav 3</li>
+                  </ul>
+                </nz-header>
+                <nz-layout>
+                  <nz-sider [nzWidth]="200" style="background:#fff">
+                    <ul nz-menu [nzMode]="'inline'" style="height:100%">
+                      <li nz-submenu>
+                        <span title><i class="anticon anticon-user"></i>subnav 1</span>
+                        <ul>
+                          <li nz-menu-item>option1</li>
+                          <li nz-menu-item>option2</li>
+                          <li nz-menu-item>option3</li>
+                          <li nz-menu-item>option4</li>
+                        </ul>
+                      </li>
+                      <li nz-submenu>
+                        <span title><i class="anticon anticon-laptop"></i>subnav 2</span>
+                        <ul>
+                          <li nz-menu-item>option5</li>
+                          <li nz-menu-item>option6</li>
+                          <li nz-menu-item>option7</li>
+                          <li nz-menu-item>option8</li>
+                        </ul>
+                      </li>
+                      <li nz-submenu>
+                        <span title><i class="anticon anticon-notification"></i>subnav 3</span>
+                        <ul>
+                          <li nz-menu-item>option9</li>
+                          <li nz-menu-item>option10</li>
+                          <li nz-menu-item>option11</li>
+                          <li nz-menu-item>option12</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nz-sider>
+                  <nz-layout style="padding:0 24px 24px">
+                    <nz-breadcrumb style="margin:12px 0;">
+                      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+                      <nz-breadcrumb-item>List</nz-breadcrumb-item>
+                      <nz-breadcrumb-item>App</nz-breadcrumb-item>
+                    </nz-breadcrumb>
+                    <nz-content style="background:#fff; padding: 24px; min-height: 280px;">Content</nz-content>
+                  </nz-layout>
+                </nz-layout>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>同样拥有顶部导航及侧边栏，区别是两边未留边距，多用于应用型的网站。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          顶部-侧边布局
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-4">
+              <nz-layout class="layout">
+
+                <nz-header>
+                  <div class="logo"></div>
+                  <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+                    <li nz-menu-item>nav 1</li>
+                    <li nz-menu-item>nav 2</li>
+                    <li nz-menu-item>nav 3</li>
+                  </ul>
+                </nz-header>
+                <nz-content style="padding:0 50px;">
+                  <nz-breadcrumb style="margin:12px 0;">
+                    <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+                    <nz-breadcrumb-item>List</nz-breadcrumb-item>
+                    <nz-breadcrumb-item>App</nz-breadcrumb-item>
+                  </nz-breadcrumb>
+                  <nz-layout style="padding:24px 0; background: #fff">
+                    <nz-sider [nzWidth]="200" style="background:#fff">
+                      <ul nz-menu [nzMode]="'inline'" style="height:100%">
+                        <li nz-submenu>
+                          <span title><i class="anticon anticon-user"></i>subnav 1</span>
+                          <ul>
+                            <li nz-menu-item>option1</li>
+                            <li nz-menu-item>option2</li>
+                            <li nz-menu-item>option3</li>
+                            <li nz-menu-item>option4</li>
+                          </ul>
+                        </li>
+                        <li nz-submenu>
+                          <span title><i class="anticon anticon-laptop"></i>subnav 2</span>
+                          <ul>
+                            <li nz-menu-item>option5</li>
+                            <li nz-menu-item>option6</li>
+                            <li nz-menu-item>option7</li>
+                            <li nz-menu-item>option8</li>
+                          </ul>
+                        </li>
+                        <li nz-submenu>
+                          <span title><i class="anticon anticon-notification"></i>subnav 3</span>
+                          <ul>
+                            <li nz-menu-item>option9</li>
+                            <li nz-menu-item>option10</li>
+                            <li nz-menu-item>option11</li>
+                            <li nz-menu-item>option12</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nz-sider>
+                    <nz-content style="padding: 0 24px; min-height: 280px;">Content</nz-content>
+                  </nz-layout>
+                  <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+                </nz-content>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>拥有顶部导航及侧边栏的页面，多用于展示类网站。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          侧边布局
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-2">
+              <nz-layout>
+                <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed">
+                  <div class="logo">
+                  </div>
+                  <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+                    <li nz-submenu>
+                      <span title><i class="anticon anticon-user"></i><span class="nav-text">User</span></span>
+                      <ul>
+                        <li nz-menu-item>Tom</li>
+                        <li nz-menu-item>Bill</li>
+                        <li nz-menu-item>Alex</li>
+                      </ul>
+                    </li>
+                    <li nz-submenu>
+                      <span title><i class="anticon anticon-team"></i><span class="nav-text">Team</span></span>
+                      <ul>
+                        <li nz-menu-item>Team 1</li>
+                        <li nz-menu-item>Team 2</li>
+                      </ul>
+                    </li>
+                    <li nz-menu-item><span><i class="anticon anticon-file"></i><span class="nav-text">File</span></span></li>
+                  </ul>
+                </nz-sider>
+                <nz-layout>
+                  <nz-header style="background: #fff; padding:0;"></nz-header>
+                  <nz-content style="margin:0 16px;">
+                    <nz-breadcrumb style="margin:12px 0;">
+                      <nz-breadcrumb-item>User</nz-breadcrumb-item>
+                      <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+                    </nz-breadcrumb>
+                    <div style="padding:24px; background: #fff; min-height: 360px;">
+                      Bill is a cat.
+                    </div>
+                  </nz-content>
+                  <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+                </nz-layout>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>侧边两列式布局。页面横向空间有限时，侧边导航可收起。</p>
+            <p>侧边导航在页面布局上采用的是左右的结构，一般主导航放置于页面的左侧固定位置，辅助菜单放置于工作区顶部。内容根据浏览器终端进行自适应，能提高横向空间的使用率，但是整个页面排版不稳定。侧边导航的模式层级扩展性强，一、二、三级导航项目可以更为顺畅且具关联性的被展示，同时侧边导航可以固定，使得用户在操作和浏览中可以快速的定位和切换当前位置，有很高的操作效率。但这类导航横向页面内容的空间会被牺牲一部份。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          自定义触发器
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-2">
+              <nz-layout>
+                <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+                  <div class="logo">
+                  </div>
+                  <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+                    <li nz-submenu>
+                      <span title><i class="anticon anticon-user"></i><span class="nav-text">User</span></span>
+                      <ul>
+                        <li nz-menu-item>Tom</li>
+                        <li nz-menu-item>Bill</li>
+                        <li nz-menu-item>Alex</li>
+                      </ul>
+                    </li>
+                    <li nz-submenu>
+                      <span title><i class="anticon anticon-team"></i><span class="nav-text">Team</span></span>
+                      <ul>
+                        <li nz-menu-item>Team 1</li>
+                        <li nz-menu-item>Team 2</li>
+                      </ul>
+                    </li>
+                    <li nz-menu-item><span><i class="anticon anticon-file"></i><span class="nav-text">File</span></span></li>
+                  </ul>
+                </nz-sider>
+                <nz-layout>
+                  <nz-header style="background: #fff; padding:0;">
+                    <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+                  </nz-header>
+                  <nz-content style="margin:0 16px;">
+                    <nz-breadcrumb style="margin:12px 0;">
+                      <nz-breadcrumb-item>User</nz-breadcrumb-item>
+                      <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+                    </nz-breadcrumb>
+                    <div style="padding:24px; background: #fff; min-height: 360px;">
+                      Bill is a cat.
+                    </div>
+                  </nz-content>
+                  <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+                </nz-layout>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>要使用自定义触发器，可以设置 <code>nzTrigger="null"</code> 来隐藏默认设定。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" [@fadeIn]>
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          响应式布局
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div class="layout-3">
+              <nz-layout>
+                <nz-sider nzCollapsible [nzCollapsedWidth]="0" [nzBreakpoint]="'lg'">
+                  <div class="logo">
+                  </div>
+                  <ul nz-menu [nzTheme]="'dark'" >
+                    <li nz-menu-item><span><i class="anticon anticon-user"></i><span class="nav-text">nav 1</span></span></li>
+                    <li nz-menu-item><span><i class="anticon anticon-video-camera"></i><span class="nav-text">nav 2</span></span>
+                    </li>
+                    <li nz-menu-item><span><i class="anticon anticon-upload"></i><span class="nav-text">nav 3</span></span></li>
+                    <li nz-menu-item><span><i class="anticon anticon-user"></i><span class="nav-text">nav 4</span></span></li>
+                  </ul>
+                </nz-sider>
+                <nz-layout>
+                  <nz-header style="background: #fff; padding:0;"></nz-header>
+                  <nz-content style="margin:24px 16px 0;">
+                    <div style="padding:24px; background: #fff; min-height: 360px;">
+                      Content
+                    </div>
+                  </nz-content>
+                  <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+                </nz-layout>
+              </nz-layout>
+            </div>
+          </div>
+          <div class="body-desc">
+            <p>nz-sider 支持响应式布局。</p>
+            <p>说明：配置 <code>nzBreakpoint</code>属性即生效，视窗宽度小于 <code>nzBreakpoint</code>时 <code>nz-sider</code> 缩小为 <code>nzCollapsedWidth</code>宽度，若将 <code>nzCollapsedWidth</code>设置为零，会出现特殊trigger效果。</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+</div>
