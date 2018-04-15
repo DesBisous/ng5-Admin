@@ -1,0 +1,73 @@
+<div class="antComponent">
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="12">
+      <div nz-row>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              通过 $event 对象取得用户输入
+            </ng-template>
+            <ng-template #body>
+              <div class="body-view">
+                <input (keyup)="onKey($event)"><br><br>
+                <p>{{values}}</p>
+              </div>
+              <div class="body-desc">
+                <p>$event对象的属性取决于 DOM 事件的类型。例如，鼠标事件与输入框编辑事件包含了不同的信息。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              结合按键事件、光标事件、模本引用变量
+            </ng-template>
+            <ng-template #body>
+              <div class="body-view">
+                <input #newHero
+                       (keyup.enter)="addHero(newHero.value);newHero.value=''"
+                       (blur)="addHero(newHero.value); newHero.value=''">
+
+                <button nz-button [nzType]="'primate'" (click)="addHero(newHero.value)">Add</button>
+                <br><br>
+                <ul><li *ngFor="let hero of heroes">{{hero}}</li></ul>
+              </div>
+              <div class="body-desc">
+                <p> 使用模板变量来引用元素 — newHero模板变量引用了<code>input</code>元素。 你可以在<code>input</code>的任何兄弟或子级元素中引用newHero。</p>
+
+                <p> 传递数值，而非元素 — 获取输入框的值并将它传递给组件的addHero，而不要传递newHero。</p>
+
+                <p> 保持模板语句简单 — (blur)事件被绑定到两个 JavaScript 语句。 第一句调用addHero。第二句newHero.value=''在添加新英雄到列表中后清除输入框。</p>
+
+                <p style="color: red;">注意：这个例子中的input中存在<code>newHero.value=''</code>,这个的作用在于，当触发事件的时候，Angular进行事件的处理语法<code>addHero(newHero.value);newHero.value=''</code>进行重置input的值。这是一个很好的写法。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <div nz-row>
+        <div nz-col [nzSpan]="24" [@zoom]>
+          <nz-card [nzBordered]="false">
+            <ng-template #title>
+              模板引用变量中获得用户输入
+            </ng-template>
+            <ng-template #body>
+              <div class="body-view">
+                <input #box (keyup)="0"><br><br>
+                <p>{{box.value}}</p>
+              </div>
+              <div class="body-desc">
+                <p>传入 $event 是靠不住的做法。</p>
+                <p>类型化事件对象揭露了重要的一点，即反对把整个 DOM 事件传到方法中，因为这样组件会知道太多模板的信息。 只有当它知道更多它本不应了解的 HTML 实现细节时，它才能提取信息。 这就违反了模板（用户看到的）和组件（应用如何处理用户数据）之间的分离关注原则。</p>
+                <p style="color: red;">注意：除非你绑定一个事件，否则这将完全无法工作。只有在应用做了些异步事件（如击键），Angular 才更新绑定（并最终影响到屏幕）。 本例代码将keyup事件绑定到了数字0，这可能是最短的模板语句了。 虽然这个语句不做什么，但它满足 Angular 的要求，所以 Angular 将更新屏幕。</p>
+              </div>
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

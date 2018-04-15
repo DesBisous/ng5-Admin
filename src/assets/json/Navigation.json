@@ -1,0 +1,121 @@
+[
+  {
+    "name": "Angular 知识",
+    "icon": "anticon-setting",
+    "sub": [
+      {
+        "name": "Angular 生命钩子",
+        "routerLink": "/home/lifecycle",
+        "desc": "每个组件都有一个被Angular管理的生命周期。Angular提供了生命周期钩子，把这些关键生命时刻暴露出来，赋予我们在它们发生时采取行动的能力。"
+      },
+      {
+        "name": "Router 路由",
+        "routerLink": "/home/route",
+        "desc": "路由基础知识"
+      },
+      {
+        "name": "Dynamic 动态组件",
+        "routerLink": "/home/dynamic",
+        "desc": "组件的模板不会永远是固定的。应用可能会需要在运行期间加载一些新的组件。"
+      },
+      {
+        "name": "Directive 指令",
+        "routerLink": "/home/directive",
+        "desc": "指令分为三类：1、组件 — 拥有模板的指令。2、结构型指令 — 通过添加和移除 DOM 元素改变 DOM 布局的指令。3、属性型指令 — 改变元素、组件或其它指令的外观和行为的指令。"
+      },
+      {
+        "name": "Pipe 管道",
+        "routerLink": "/home/pipe",
+        "desc": "通过引入Angular管道，我们可以把这种简单的“显示-值”转换器声明在HTML中。"
+      },
+      {
+        "name": "Animate 动画",
+        "routerLink": "/home/animate",
+        "desc": "动画是现代Web应用设计中一个很重要的方面。我们希望用户界面能在不同的状态之间更平滑的转场。如果需要，还可以用适当的动画来吸引注意力。 设计良好的动画不但会让UI更有趣，还会让它更容易使用。"
+      },
+      {
+        "name": "basicForm 基础表单",
+        "routerLink": "/home/basicForm",
+        "desc": "Angular 事件绑定语法把这些事件绑定到事件处理器。"
+      },
+      {
+        "name": "richForm 丰富表单",
+        "routerLink": "/home/richForm",
+        "desc": "Angular 丰富、复杂、多样表单展示。"
+      },
+      {
+        "name": "EChart 图标",
+        "routerLink": "/home/echart",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      }
+    ]
+  },
+  {
+    "name": "General 一般",
+    "icon": "anticon-paper-clip",
+    "sub": [
+      {
+        "name": "Button 按钮",
+        "routerLink": "/home/button",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      },
+      {
+        "name": "Icon 图标",
+        "routerLink": "/home/icon",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      }
+    ]
+  },
+  {
+    "name": "Layout 结构",
+    "icon": "anticon-layout",
+    "sub": [
+      {
+        "name": "Grid 栅格",
+        "routerLink": "/home/grid",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      },
+      {
+        "name": "Layout 布局",
+        "routerLink": "/home/layout",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      }
+    ]
+  },
+  {
+    "name": "Navigation 导航",
+    "icon": "anticon-exception",
+    "sub": [
+      {
+        "name": "Affix 固钉",
+        "routerLink": "/home/affix",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      },
+      {
+        "name": "Breadcrumb 面包屑",
+        "routerLink": "/home/breadcrumb",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      },
+      {
+        "name": "Dropdown 下拉菜单",
+        "routerLink": "/home/dropdown",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      },
+      {
+        "name": "Menu 导航菜单",
+        "routerLink": "/home/menu",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      },
+      {
+        "name": "Pagination 分页",
+        "routerLink": "/home/pagination",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      },
+      {
+        "name": "Steps 步骤条",
+        "routerLink": "/home/steps",
+        "desc": "这里标注一些对于当前目录内容的描述..."
+      }
+    ]
+  }
+]

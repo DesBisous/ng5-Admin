@@ -1,0 +1,107 @@
+<nz-layout class="layout">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'" [nzTrigger]="null" [nzWidth]="240">
+    <div class="logo">
+      <a href="/">
+        <img src="favicon.ico" alt="">
+        <h1 [hidden]="isCollapsed">Ant Angular Pro</h1>
+      </a>
+    </div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+      <li nz-submenu *ngFor="let navLeftData of navLeftDatas; index as i;">
+        <span title><i class="anticon" [ngClass]="navLeftData['icon']"></i><span class="nav-text">{{navLeftData['name']}}</span></span>
+        <ul>
+          <li nz-menu-item *ngFor="let subNav of navLeftData['sub']; index as j;" (click)="setContentNav(i,j)" [routerLink]="[subNav.routerLink]">{{subNav.name}}</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout class="subLayout">
+    <div class="subLayoutDiv" #divTarget>
+      <nz-header>
+        <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+        <div class="header-right">
+          <div class="searchBlock">
+            <i class="anticon anticon-search" [@searchAnimate] *ngIf="!searchView" (click)="setSearchView(true)"></i>
+            <nz-input [@searchAnimate] *ngIf="searchView"  [nzType]="'search'" [nzPlaceHolder]="'input search text'" (nzOnSearch)="onSearch($event)"></nz-input>
+          </div>
+          <div class="message" (click)="setPopVisible($event)" >
+            <nz-badge [nzCount]="count" [nzOverflowCount]="99" nzShowZero>
+              <ng-template #content>
+                <nz-popover [nzOverlayClassName]="'message-pop'" (nzVisibleChange)="popVisibleChange()" [(nzVisible)]="popVisible" [nzPlacement]="'bottomRight'" [nzTrigger]="'click'">
+                  <i class="anticon anticon-bell" nz-popover></i>
+                  <ng-template #nzTemplate>
+                    <nz-spin [nzSpinning]="tabBodyloading">
+                      <nz-tabset>
+                        <nz-tab *ngFor="let tab of tabs; index as i">
+                          <ng-template #nzTabHeading>
+                            <i [ngClass]="tab.icon"></i>
+                            {{tab.name}}
+                          </ng-template>
+                          <div class="message-tab">
+                            <ul>
+                              <li *ngFor="let item of tab.data">
+                                <nz-avatar nzIcon="user" nzSize="large" nzSrc="{{item.img}}"></nz-avatar>
+                                <span class="message-tab-context">
+                                  <h4>{{item.context}}</h4>
+                                  <span>{{item.desc}}</span>
+                                  <time>{{item.date}}</time>
+                                </span>
+                              </li>
+                            </ul>
+                            <div class="message-tab-footer" (click)="refreshMessage(i)">
+                              <i class="anticon anticon-reload"></i>刷新{{tab.name}}!
+                            </div>
+                          </div>
+                        </nz-tab>
+                      </nz-tabset>
+                    </nz-spin>
+                  </ng-template>
+                </nz-popover>
+              </ng-template>
+            </nz-badge>
+          </div>
+          <div class="portrait">
+            <nz-dropdown [nzPlacement]="'bottomCenter'" >
+              <a class="ant-dropdown-link" nz-dropdown>
+                <nz-avatar nzSize="large" nzIcon="user" nzSrc="./assets/images/portrait.png"></nz-avatar>
+                <span class="name">邝晓滨</span>
+              </a>
+              <ul class="nz-menu-ul" nz-menu>
+                <li nz-menu-item>
+                  <a rel="noopener noreferrer"><i class="anticon anticon-user"></i>个人中心</a>
+                </li>
+                <li nz-menu-item>
+                  <a rel="noopener noreferrer"><i class="anticon anticon-setting"></i>设置</a>
+                </li>
+                <li nz-menu-divider></li>
+                <li nz-menu-item nzDisable><i class="anticon anticon-logout"></i>登出</li>
+              </ul>
+            </nz-dropdown>
+          </div>
+        </div>
+      </nz-header>
+      <nz-content>
+        <div class="mainHeader">
+          <nz-breadcrumb>
+            <nz-breadcrumb-item *ngFor="let name of mainHeader.list; index as i;"><i class="anticon anticon-home" *ngIf="i == 0"></i>&nbsp;&nbsp;{{name}}</nz-breadcrumb-item>
+          </nz-breadcrumb>
+          <div class="mainHeaderDetail">
+            <h1>{{mainHeader['list'][mainHeader['list'].length - 1]}}</h1>
+            <div class="mainHeaderSubDetail">{{mainHeader.desc}}</div>
+          </div>
+        </div>
+        <div class="mainContent">
+          <!--组件 路由插座位置-->
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer>
+        <div> <i class="anticon anticon-chrome"></i>&nbsp;&nbsp;<i class="anticon anticon-github"></i> </div>
+        <div> Angular5、Ng-Zorro、NodeJs、Express、MySql、TypeScrip、Less </div>
+        <div> Benson | 邝晓滨 </div>
+        <div> © 2018 </div>
+      </nz-footer>
+    </div>
+    <nz-back-top></nz-back-top>
+  </nz-layout>
+</nz-layout>

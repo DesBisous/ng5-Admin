@@ -1,0 +1,92 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+  <div style="margin-bottom: 1em">
+    <button type="submit" nz-button [nzType]="'primary'" [disabled]="userForm.pristine || userForm.invalid">提交</button>
+    <button type="reset" nz-button [nzType]="'danger'" (click)="revert()" [disabled]="userForm.pristine">Revert</button>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+    <div *ngIf="userForm.get('name').touched">
+      <span *ngIf="userForm.hasError('required', 'name')">name不能为空!</span>
+      <span *ngIf="userForm.hasError('minlength', 'name')">name必须大于2位数</span>
+      <span *ngIf="userForm.get('name').pending">检查中...</span>
+      <span *ngIf="userForm.hasError('name', 'name')">{{userForm.get('name').getError('name')?.dec}}</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">iphone:
+      <input class="form-control" formControlName="iphone">
+    </label>
+    <div *ngIf="userForm.get('iphone').touched">
+      <span>{{userForm.get('iphone').getError('mobile')}}</span>
+    </div>
+  </div>
+
+  <div class="form-group" formGroupName="pass">
+    <label class="center-block">密码:
+      <input type="password" class="form-control" formControlName="password">
+    </label>
+    <span *ngIf="userForm.hasError('required', ['pass', 'password'])">密码需要必填</span>
+    <br>
+    <label class="center-block">确认密码:
+      <input type="password" class="form-control" formControlName="rePassword">
+    </label>
+    <span *ngIf="userForm.hasError('required', ['pass','rePassword'])">确认密码需要必填</span>
+    <div *ngIf="userForm.get('pass').touched">
+      <span>{{userForm.get('pass').getError('pw')?.dec}}</span>
+    </div>
+  </div>
+
+  <div formArrayName="secretLairs" class="well well-lg">
+    <div *ngFor="let address of secretLairs.controls; let i=index" [formGroupName]="i" >
+      <!-- The repeated address template -->
+      <h4>Address #{{i + 1}}</h4>
+      <div style="margin-left: 1em;">
+        <div class="form-group">
+          <label class="center-block">Street:
+            <input class="form-control" formControlName="street">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">City:
+            <input class="form-control" formControlName="city">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">State:
+            <select class="form-control" formControlName="state">
+              <option *ngFor="let state of states" [value]="state">{{state}}</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">email Code:
+            <input class="form-control" formControlName="email">
+          </label>
+        </div>
+      </div>
+      <br>
+      <!-- End of the repeated address template -->
+    </div>
+    <button nz-button [nzType]="'primary'" (click)="addLair()" type="button">增加一个地址</button>
+  </div>
+  <div class="form-group radio">
+    <h4>Super power:</h4>
+    <label class="center-block"><input type="radio" formControlName="power" value="flight">Flight</label>
+    <label class="center-block"><input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
+    <label class="center-block"><input type="radio" formControlName="power" value="strength">Strength</label>
+  </div>
+  <div class="checkbox">
+    <label class="center-block">
+      <input type="checkbox" formControlName="sidekick">I have a sidekick.
+    </label>
+  </div>
+</form>
+
+<p>userForm value: {{ userForm.value | json}}</p>
+
+<h4>Name change log</h4>
+<div *ngFor="let name of nameChangeLog">{{name}}</div>
