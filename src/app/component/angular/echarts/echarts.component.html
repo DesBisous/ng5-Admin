@@ -1,0 +1,52 @@
+<div class="antComponent">
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="24">
+        <nz-card [nzBordered]="false">
+            <ng-template #title>
+              饼状图
+            </ng-template>
+            <ng-template #body>
+              <div class="body-view">
+                <div echarts [options]="pipOption" class="chart"></div>
+              </div>
+              <div class="body-desc">
+                <p>饼状图</p>
+              </div>
+            </ng-template>
+          </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24">
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          3D 柱状图
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <div echarts [options]="barOption" class="chart"></div>
+          </div>
+          <div class="body-desc">
+            <p>3D 柱状图</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" >
+      <nz-card [nzBordered]="false">
+        <ng-template #title>
+          3D地图
+        </ng-template>
+        <ng-template #body>
+          <div class="body-view">
+            <button nz-button [nzType]="'primary'" (click)="globeView = !globeView" >
+              <span>打开/关闭</span>
+            </button>
+            <div echarts [options]="globeOption" class="globeChart" *ngIf="globeView"></div>
+          </div>
+          <div class="body-desc">
+            <p>3D地图</p>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+</div>

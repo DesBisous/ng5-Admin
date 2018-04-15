@@ -18,6 +18,7 @@ import {PipeComponent} from './component/angular/pipe/pipe.component';
 import {AnimateComponent} from './component/angular/animate/animate.component';
 import {BasicFormComponent} from './component/angular/basic-form/basic-form.component';
 import {RichFormComponent} from './component/angular/rich-form/rich-form.component';
+import {EchartsComponent} from './component/angular/echarts/echarts.component';
 
 /**
  * pathMatch用来规定重定向的时候，path匹配规则
@@ -41,6 +42,7 @@ const routes: Routes = [
     { path: 'animate', component: AnimateComponent },
     { path: 'basicForm', component: BasicFormComponent },
     { path: 'richForm', component: RichFormComponent },
+    { path: 'echarts', component: EchartsComponent },
     { path: 'breadcrumb', component: BreadcrumbComponent },
     { path: 'button', component: ButtonComponent },
     { path: 'icon', component: IconComponent },

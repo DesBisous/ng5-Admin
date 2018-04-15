@@ -44,8 +44,8 @@
         "desc": "Angular 丰富、复杂、多样表单展示。"
       },
       {
-        "name": "EChart 图标",
-        "routerLink": "/home/echart",
+        "name": "ECharts 图标",
+        "routerLink": "/home/echarts",
         "desc": "这里标注一些对于当前目录内容的描述..."
       }
     ]

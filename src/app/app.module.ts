@@ -39,6 +39,8 @@ import { UserService } from './service/user.service';
 import { UserDetailFormComponent } from './component/angular/rich-form/user-detail-form/user-detail-form.component';
 import { FormValidatorsService } from './service/form-validators.service';
 import { FormValidatorsDirective } from './directive/form-validators.directive';
+import { EchartsComponent } from './component/angular/echarts/echarts.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
 @NgModule({
@@ -72,7 +74,8 @@ import { FormValidatorsDirective } from './directive/form-validators.directive';
     BasicFormComponent,
     RichFormComponent,
     UserDetailFormComponent,
-    FormValidatorsDirective
+    FormValidatorsDirective,
+    EchartsComponent
   ],
   entryComponents: [
     Ad1Component,
@@ -85,7 +88,8 @@ import { FormValidatorsDirective } from './directive/form-validators.directive';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgZorroAntdModule.forRoot()
+    NgZorroAntdModule.forRoot(),
+    NgxEchartsModule
   ],
   providers: [ AdService, UserService, FormValidatorsService ],
   bootstrap: [AppComponent]
