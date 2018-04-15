@@ -86,7 +86,6 @@ export class UserDetailFormComponent implements OnInit, OnChanges {
 
   // 提交
   onSubmit() {
-
     let userFormValid: boolean = this.userForm.valid;
     let userFormMsg: any = this.userForm.errors;
     console.log('--------------userForm检测---------------');

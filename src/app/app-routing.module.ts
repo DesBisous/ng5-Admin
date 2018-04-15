@@ -29,7 +29,7 @@ import {EchartsComponent} from './component/angular/echarts/echarts.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, children: [
-    { path: '', component: LifecycleComponent },
+    { path: '', component: ButtonComponent },
     { path: 'lifecycle', component: LifecycleComponent },
     { path: 'route', component: RouteComponent, children: [
       { path: '', component: Routechild1Component },

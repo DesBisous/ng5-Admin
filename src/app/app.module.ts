@@ -37,10 +37,10 @@ import { BasicFormComponent } from './component/angular/basic-form/basic-form.co
 import { RichFormComponent } from './component/angular/rich-form/rich-form.component';
 import { UserService } from './service/user.service';
 import { UserDetailFormComponent } from './component/angular/rich-form/user-detail-form/user-detail-form.component';
-import { FormValidatorsService } from './service/form-validators.service';
 import { FormValidatorsDirective } from './directive/form-validators.directive';
 import { EchartsComponent } from './component/angular/echarts/echarts.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { FormValidatorsService } from './service/form-validators.service';
 
 
 @NgModule({
